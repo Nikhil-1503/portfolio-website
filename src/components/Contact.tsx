@@ -30,9 +30,8 @@ const Contact = () => {
               <a
 
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors" href="mailto:nikhil.shanbhag1503@gmail.com">
-                nikhil.shanbhag1503@gmail.com
                 <Mail size={20} className="text-primary" />
-                nikhil@example.com
+                nikhil.shanbhag1503@gmail.com
               </a>
               <a
 
