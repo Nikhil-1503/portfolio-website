@@ -4,6 +4,8 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Blog from "@/components/Blog";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,6 +18,8 @@ const Index = () => {
       <Experience />
       <Skills />
       <Projects />
+      <Blog />
+      <Certifications />
       <Contact />
       <Footer />
     </div>
