@@ -28,8 +28,8 @@ const Contact = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="mailto:nikhil@example.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors" href="mailto:nikhil.shanbhag1503@gmail.com">
                 nikhil.shanbhag1503@gmail.com
                 <Mail size={20} className="text-primary" />
                 nikhil@example.com
