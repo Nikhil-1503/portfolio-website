@@ -29,26 +29,26 @@ const Contact = () => {
             <div className="space-y-4">
               <a
                 href="mailto:nikhil@example.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+                nikhil.shanbhag1503@gmail.com
                 <Mail size={20} className="text-primary" />
                 nikhil@example.com
               </a>
               <a
-                href="https://linkedin.com/in/nikhilshanbhag"
+
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors" href="https://www.linkedin.com/in/nikhilshanbhag01/">
+
                 <Linkedin size={20} className="text-primary" />
                 LinkedIn
               </a>
               <a
-                href="https://github.com/nikhilshanbhag"
+
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-              >
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors" href="https://github.com/Nikhil-1503">
+
                 <Github size={20} className="text-primary" />
                 GitHub
               </a>
@@ -64,8 +64,8 @@ const Contact = () => {
               maxLength={100}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-            />
+              className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors" />
+
             <input
               type="email"
               placeholder="Your Email"
@@ -73,8 +73,8 @@ const Contact = () => {
               maxLength={255}
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-            />
+              className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors" />
+
             <textarea
               placeholder="Your Message"
               required
@@ -82,20 +82,20 @@ const Contact = () => {
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-            />
+              className="w-full bg-card border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none" />
+
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+
               <Send size={16} />
               Send Message
             </button>
           </form>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Contact;
