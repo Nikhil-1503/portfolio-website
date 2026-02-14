@@ -1,4 +1,5 @@
 import { GraduationCap, MapPin } from "lucide-react";
+import profileImg from "@/assets/nikhil-profile.png";
 
 const About = () => {
   return (
@@ -9,8 +10,15 @@ const About = () => {
         </h2>
         <div className="w-16 h-1 bg-primary rounded mb-8" />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2 space-y-4 text-muted-foreground leading-relaxed">
+        <div className="grid md:grid-cols-[auto_1fr_auto] gap-8 items-start">
+          <div className="flex justify-center md:justify-start">
+            <img
+              src={profileImg}
+              alt="Nikhil Shanbhag"
+              className="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover border-2 border-primary/30 shadow-lg shadow-primary/10"
+            />
+          </div>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               I'm a Data Engineer with 3 years of experience at Deloitte, specializing in
               designing and building scalable data pipelines and analytics solutions. My work
