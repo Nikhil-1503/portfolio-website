@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# 🌐 Nikhil Shanbhag – Data Engineer Portfolio
 
-## Project info
+Welcome to my personal portfolio website repository.  
+This website showcases my **data engineering projects, technical skills, certifications, and learning notes**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚀 About Me
 
-There are several ways of editing your application.
+I am a **Data Engineer with 3+ years of experience** working with Azure Data Factory, Databricks, SQL, Python, and Oracle FDI.  
+I enjoy building scalable data pipelines, optimizing analytics workflows, and exploring cloud data platforms.  
 
-**Use Lovable**
+This portfolio serves as a central hub for:
+- My technical projects
+- Professional experience
+- Learning notes and blogs
+- Certifications and achievements
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧰 Tech Stack
 
-**Use your preferred IDE**
+### **Frontend**
+- HTML5, CSS3, JavaScript  
+- React.js  
+- Tailwind CSS / Custom CSS  
+- Framer Motion (animations)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### **Data Engineering**
+- Python, SQL  
+- Apache Spark (PySpark)  
+- Azure Data Factory  
+- Azure Databricks  
+- Oracle FDI  
+- Control-M 
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 📂 Website Sections
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🧑‍💻 1. About Me  
+Professional background, experience, and interests.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 📊 2. Projects  
+Detailed data engineering projects including:
+- ETL pipelines  
+- Big data processing  
+- Cloud-based analytics workflows 
+- SQL case studies
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 📚 3. Data Engineering Notes  
+Curated notes and explanations on:
+- SQL concepts  
+- Spark & distributed computing   
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 🎓 4. Certifications  
+List of certifications, learning paths, and achievements.
 
-**Edit a file directly in GitHub**
+### 📩 5. Contact  
+Links to LinkedIn, GitHub, and email for collaboration and opportunities.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📸 Preview
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+![Portfolio Preview](./public/images/Portfolio.png)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## ⚙️ Getting Started
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Clone the repository
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+git clone https://github.com/Nikhil-1503/portfolio-website.git
+cd portfolio-website

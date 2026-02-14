@@ -20,7 +20,7 @@ const About = () => {
           </div>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              I'm a Data Engineer with 3 years of experience at Deloitte, specializing in
+              I'm a Data Engineer with 3 years of experience, specializing in
               designing and building scalable data pipelines and analytics solutions. My work
               revolves around turning complex, raw data into clean, reliable datasets that power
               enterprise-level decision-making.
@@ -40,7 +40,7 @@ const About = () => {
                 <h3 className="font-semibold text-foreground">Education</h3>
               </div>
               <p className="text-sm text-muted-foreground">B.Tech</p>
-              <p className="text-sm text-muted-foreground">NIE, Mysore</p>
+              <p className="text-sm text-muted-foreground">NIE, Mysuru</p>
             </div>
 
             <div className="border border-border rounded-lg p-4 card-hover">

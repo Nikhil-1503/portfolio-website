@@ -1,25 +1,25 @@
-import { Award, Clock, Target } from "lucide-react";
+import { Award, Clock, Target, CircleCheck  } from "lucide-react";
 
 const certifications = [
   {
-    name: "Azure Data Engineer Associate (DP-203)",
-    org: "Microsoft",
-    status: "In Progress" as const,
+    name: "Databricks Certified Data Engineer Associate",
+    org: "Databricks",
+    status: "Completed" as const,
   },
   {
-    name: "Databricks Certified Data Engineer",
+    name: "Databricks Certified Generative AI Engineer Engineer",
     org: "Databricks",
     status: "Planned" as const,
   },
   {
-    name: "Oracle Cloud Infrastructure Foundations",
-    org: "Oracle",
-    status: "Planned" as const,
+    name: "Microsoft Certified: Azure AI Engineer (AZ-102)",
+    org: "Microsoft",
+    status: "Completed" as const,
   },
 ];
 
 const statusConfig = {
-  "In Progress": { icon: Clock, className: "text-primary bg-primary/10 border-primary/30" },
+  "Completed": { icon: CircleCheck , className: "text-green-600 bg-green-500/10 border-green-500/30" },
   Planned: { icon: Target, className: "text-muted-foreground bg-secondary border-border" },
 };
 

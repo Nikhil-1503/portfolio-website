@@ -44,7 +44,7 @@ const Blog = () => {
           Data Engineering <span className="text-gradient">Notes</span>
         </h2>
         <p className="text-muted-foreground mb-2 max-w-xl">
-          Technical deep-dives and learnings from building production data systems.
+          Technical deep-dives and learnings from building data systems.
         </p>
         <div className="w-16 h-1 bg-primary rounded mb-10" />
 
