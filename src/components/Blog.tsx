@@ -49,7 +49,7 @@ const Blog = () => {
         <div className="w-16 h-1 bg-primary rounded mb-10" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {notes.map((note, i) => (
+          {notes.slice(0, 5).map((note, i) => (
             <div
               key={note.title}
               className="group border border-border rounded-lg p-5 card-hover bg-card flex flex-col"
@@ -75,7 +75,15 @@ const Blog = () => {
               </button>
             </div>
           ))}
+
+          <a
+            href="/notes" // or /blog if using Next.js routing
+            className="group border border-primary/40 rounded-lg p-5 bg-primary/5 backdrop-blur flex flex-col items-center justify-center hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all"
+          >
+            View All Notes
+          </a>
         </div>
+
 
         {/* Modal */}
         {openIndex !== null && (

@@ -102,6 +102,17 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="https://github.com/Nikhil-1503"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-lg border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            See More Projects
+          </a>
+        </div>
       </div>
     </section>
   );

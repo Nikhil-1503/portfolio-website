@@ -11,13 +11,26 @@ const About = () => {
         <div className="w-16 h-1 bg-primary rounded mb-8" />
 
         <div className="grid md:grid-cols-[auto_1fr_auto] gap-8 items-start">
-          <div className="flex justify-center md:justify-start">
+          {/* <div className="flex justify-center md:justify-start">
             <img
               src={profileImg}
               alt="Nikhil Shanbhag"
               className="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover border-2 border-primary/30 shadow-lg shadow-primary/10"
             />
+          </div> */}
+
+          <div className="relative group w-40 h-40 md:w-48 md:h-48">
+            <div className="absolute inset-0 border-2 border-primary rounded-xl translate-x-3 translate-y-3 transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+
+            <img
+              src={profileImg}
+              alt="Nikhil Shanbhag"
+              className="relative z-10 w-full h-full object-cover rounded-xl grayscale transition-all duration-300 
+              group-hover:grayscale-0 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:scale-105 
+              shadow-xl group-hover:shadow-primary/30"
+            />
           </div>
+
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               I'm a Data Engineer with 3 years of experience, specializing in
@@ -39,7 +52,7 @@ const About = () => {
                 <GraduationCap size={20} className="text-primary" />
                 <h3 className="font-semibold text-foreground">Education</h3>
               </div>
-              <p className="text-sm text-muted-foreground">B.Tech</p>
+              <p className="text-sm text-muted-foreground">B.E in CSE</p>
               <p className="text-sm text-muted-foreground">NIE, Mysuru</p>
             </div>
 

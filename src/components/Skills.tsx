@@ -1,15 +1,15 @@
 import { Database, Code, Cloud, Terminal, Settings, Workflow } from "lucide-react";
-import { SiPython, SiDatabricks, SiOracle, SiApacheairflow } from "react-icons/si";
-
+import { SiPython, SiDatabricks, SiOracle, SiApachespark, SiApacheairflow, SiBmcsoftware  } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 
 const skills = [
   { name: "SQL", icon: Database },
   { name: "Python", icon: SiPython },
-  { name: "PySpark", icon: Terminal },
-  { name: "Azure Data Factory", icon: Cloud },
+  { name: "PySpark", icon: SiApachespark },
+  { name: "Azure Data Factory", icon: VscAzure },
   { name: "Azure Databricks", icon: SiDatabricks },
   { name: "Oracle FDI", icon: SiOracle },
-  { name: "Control-M", icon: Settings },
+  { name: "Control-M", icon: SiBmcsoftware },
 ];
 
 const Skills = () => {
