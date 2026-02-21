@@ -47,6 +47,7 @@ const About = () => {
           </div>
 
           <div className="space-y-4">
+            <a href="https://nie.ac.in/">
             <div className="border border-border rounded-lg p-4 card-hover">
               <div className="flex items-center gap-3 mb-2">
                 <GraduationCap size={20} className="text-primary" />
@@ -55,6 +56,7 @@ const About = () => {
               <p className="text-sm text-muted-foreground">B.E in CSE</p>
               <p className="text-sm text-muted-foreground">NIE, Mysuru</p>
             </div>
+            </a>
 
             <div className="border border-border rounded-lg p-4 card-hover">
               <div className="flex items-center gap-3 mb-2">

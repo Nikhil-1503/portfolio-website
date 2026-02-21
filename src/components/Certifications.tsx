@@ -5,6 +5,7 @@ const certifications = [
     name: "Databricks Certified Data Engineer Associate",
     org: "Databricks",
     status: "Completed" as const,
+    link: "https://credentials.databricks.com/2f16f8f1-441b-42e9-a10a-44545ae2057e#acc.cxe7z201",
   },
   {
     name: "Databricks Certified Generative AI Engineer Engineer",
@@ -15,6 +16,7 @@ const certifications = [
     name: "Microsoft Certified: Azure AI Engineer (AZ-102)",
     org: "Microsoft",
     status: "Completed" as const,
+    link: "https://learn.microsoft.com/api/credentials/share/en-in/NikhilShanbhag-9335/BDACC328F87B91AF?sharingId=148C60CD3A2AE99",
   },
 ];
 
@@ -40,6 +42,7 @@ const Certifications = () => {
             const config = statusConfig[cert.status];
             const StatusIcon = config.icon;
             return (
+              <a href={cert.link} target="_blank" className="relative group block">
               <div
                 key={cert.name}
                 className="border border-border rounded-lg p-6 card-hover bg-card flex flex-col"
@@ -54,6 +57,7 @@ const Certifications = () => {
                 <h3 className="text-base font-semibold text-foreground mb-1 leading-snug">{cert.name}</h3>
                 <p className="text-sm text-muted-foreground">{cert.org}</p>
               </div>
+              </a>
             );
           })}
         </div>
