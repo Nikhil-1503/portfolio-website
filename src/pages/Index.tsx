@@ -1,3 +1,5 @@
+import { useState } from "react";
+import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,10 +12,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <Hero />
+    <>
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
+      <div className={`min-h-screen bg-background ${loading ? "opacity-0" : "animate-fade-up"}`}>
+        <Navbar />
+        <Hero />
       <About />
       <Experience />
       <Skills />
@@ -22,7 +28,8 @@ const Index = () => {
       <Certifications />
       <Contact />
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

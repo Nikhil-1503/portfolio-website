@@ -1,5 +1,6 @@
 import { ArrowDown, Briefcase } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import DagGraph from "@/components/DagGraph";
 
 const Hero = () => {
   return (
@@ -51,9 +52,14 @@ const Hero = () => {
           </a>
         </div>
 
+        {/* Animated DAG */}
+        <div className="animate-fade-up animate-delay-400 mt-12 opacity-60">
+          <DagGraph />
+        </div>
+
         <a
           href="#about"
-          className="animate-fade-up animate-delay-500 inline-block mt-16 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+          className="animate-fade-up animate-delay-500 inline-block mt-8 text-muted-foreground hover:text-primary transition-colors animate-bounce"
         >
           <ArrowDown size={24} />
         </a>
