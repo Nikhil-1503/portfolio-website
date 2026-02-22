@@ -1,14 +1,37 @@
 import { useState } from "react";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
+const EMAILJS_SERVICE_ID = "service_cc9kin9";
+const EMAILJS_TEMPLATE_ID = "template_xe4vkfg";
+const EMAILJS_PUBLIC_KEY = "glQ6jlbUQTtcPryu9";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder - would integrate with backend
-    alert("Thanks for reaching out! I'll get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+    setSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast.success("Message sent! I'll get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -85,10 +108,10 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
-
-              <Send size={16} />
-              Send Message
+              disabled={sending}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50">
+              {sending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+              {sending ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
