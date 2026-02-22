@@ -1,15 +1,15 @@
 import { useState, useEffect, useCallback } from "react";
 
 const logLines = [
-  { text: "> Initializing Spark session...", delay: 0 },
-  { text: "> Loading pipeline config...", delay: 400 },
-  { text: "> Connecting to Azure Data Lake...", delay: 800 },
+  { text: "> Initializing Session...", delay: 0 },
+  { text: "> Loading config...", delay: 400 },
+  { text: "> Connecting to source...", delay: 800 },
   { text: "> Extracting data from source...", delay: 1200 },
   { text: "> Running transformations...", delay: 1600 },
   { text: "> Validating schema integrity...", delay: 2000 },
-  { text: "> Writing to Delta Lake...", delay: 2400 },
-  { text: "> DAG execution complete ✓", delay: 2800 },
-  { text: "> Portfolio ready.", delay: 3200 },
+  // { text: "> Writing to Delta Lake...", delay: 2400 },
+  // { text: "> DAG execution complete ✓", delay: 2800 },
+  { text: "> Portfolio ready.", delay: 2400 },
 ];
 
 const Preloader = ({ onComplete }: { onComplete: () => void }) => {
@@ -55,7 +55,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
             <span className="w-3 h-3 rounded-full bg-destructive/80" />
             <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
             <span className="w-3 h-3 rounded-full bg-primary/80" />
-            <span className="ml-3 text-xs font-mono text-muted-foreground">nikhil@pipeline ~ run portfolio.py</span>
+            <span className="ml-3 text-xs font-mono text-muted-foreground">nikhilshanbhag@pipeline ~ run portfolio.py</span>
           </div>
 
           {/* Terminal body */}
@@ -86,7 +86,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         {/* Progress bar */}
         <div className="mt-4 h-1 bg-secondary rounded-full overflow-hidden">
           <div
-            className="h-full bg-primary rounded-full transition-all duration-300 ease-out"
+            className="h-full bg-primary rounded-full transition-all duration-200 ease-out"
             style={{ width: `${(visibleLines / logLines.length) * 100}%` }}
           />
         </div>
