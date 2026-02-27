@@ -1,7 +1,7 @@
 # 🌐 Nikhil Shanbhag – Data Engineer Portfolio
 
 Welcome to my personal portfolio website repository.  
-This website showcases my **data engineering projects, technical skills, certifications, and learning notes**.
+This website showcases my **data engineering projects, technical skills and certifications**.
 
 ---
 
@@ -13,7 +13,7 @@ I enjoy building scalable data pipelines, optimizing analytics workflows, and ex
 This portfolio serves as a central hub for:
 - My technical projects
 - Professional experience
-- Learning notes and blogs
+<!-- - Learning notes and blogs -->
 - Certifications and achievements
 
 ---
@@ -41,17 +41,16 @@ This portfolio serves as a central hub for:
 ### 🧑‍💻 1. About Me  
 Professional background, experience, and interests.
 
-### 📊 2. Projects  
-Detailed data engineering projects including:
-- ETL pipelines  
-- Big data processing  
-- Cloud-based analytics workflows 
-- SQL case studies
+### 📚 2. Technical Skills
+All of my technical skills
 
-### 📚 3. Data Engineering Notes  
+### 📊 3. Projects  
+Detailed data engineering projects
+
+<!-- ### 📚 3. Data Engineering Notes  
 Curated notes and explanations on:
 - SQL concepts  
-- Spark & distributed computing   
+- Spark & distributed computing    -->
 
 ### 🎓 4. Certifications  
 List of certifications, learning paths, and achievements.

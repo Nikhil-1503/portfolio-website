@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://nikhilshanbhag.netlify.app/sitemap.xml

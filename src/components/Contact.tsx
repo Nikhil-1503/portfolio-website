@@ -3,9 +3,9 @@ import { Mail, Linkedin, Github, Send, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = "glQ6jlbUQTtcPryu9"
+const EMAILJS_SERVICE_ID = "service_cc9kin9"
+const EMAILJS_TEMPLATE_ID = "template_xe4vkfg"
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
