@@ -1,5 +1,5 @@
 import { Database, Code, Cloud, Terminal, Settings, Workflow } from "lucide-react";
-import { SiPython, SiDatabricks, SiOracle, SiApachespark, SiApacheairflow, SiBmcsoftware  } from "react-icons/si";
+import { SiPython, SiDatabricks, SiOracle, SiApachespark, SiApacheairflow, SiBmcsoftware, SiSnowflake  } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { useState } from "react";
 
@@ -12,6 +12,7 @@ const skills = [
 
   { name: "Azure Data Factory", category: "cloud", icon: VscAzure },
   { name: "Azure Databricks", category: "cloud", icon: SiDatabricks },
+  { name: "Snowflake", category: "cloud", icon: SiSnowflake },
 
   { name: "Oracle FDI", category: "bi", icon: SiOracle },
   { name: "Control-M", category: "orchestrate", icon: SiBmcsoftware },
@@ -40,7 +41,7 @@ const Skills = () => {
               className={`px-4 py-1.5 rounded-full border text-sm capitalize transition 
                 ${
                   activeCategory === cat
-                    ? "bg-primary text-white border-primary"
+                    ? "border-primary text-primary bg-primary/10"
                     : "border-border text-muted-foreground hover:bg-primary/10"
                 }`}
             >
