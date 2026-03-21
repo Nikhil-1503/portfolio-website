@@ -24,6 +24,8 @@ const projects = [
     title: "Data With Nikhil: Data Engineering Blog",
     description: "A modern data engineering blog showcasing real-world concepts and hands-on implementations using PySpark, SQL, Azure, and Snowflake.",
     tags: ["TypeScript", "React", "Tailwind CSS", "Shiki"],
+    link: "https://datawithnikhil.netlify.app/",
+    github: "https://github.com/Nikhil-1503/data-with-nikhil",
     image: article,
   },
   {
