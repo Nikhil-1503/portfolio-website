@@ -2,11 +2,11 @@ import { Github, ExternalLink, FolderOpen } from "lucide-react";
 import canvasofnikhil from "@/assets/canvasofnikhil.png";
 import stayinsights from "@/assets/bookings_dashboard.png";
 import datalake from "@/assets/datalake.png";
-import dashboard from "@/assets/dashboard.png";
+import article from "@/assets/article.png";
 
 const projects = [
   {
-    title: "Canvas Of Nikhil",
+    title: "Canvas Of Nikhil: Art Portfolio Website",
     description: "A personal art portfolio website showcasing my charcoal, graphite and color pencil artworks, designed to reflect creativity, precision and visual storytelling.",
     tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
     link: "https://canvasofnikhil.netlify.app/",
@@ -21,10 +21,10 @@ const projects = [
     image: stayinsights,
   },
   {
-    title: "Real-Time Analytics Dashboard",
-    description: "Streaming analytics solution with live data ingestion and visualization.",
-    tags: ["PySpark", "Azure", "Python"],
-    image: dashboard,
+    title: "Data With Nikhil: Data Engineering Blog",
+    description: "A modern data engineering blog showcasing real-world concepts and hands-on implementations using PySpark, SQL, Azure, and Snowflake.",
+    tags: ["TypeScript", "React", "Tailwind CSS", "Shiki"],
+    image: article,
   },
   {
     title: "Data Lake Architecture",
