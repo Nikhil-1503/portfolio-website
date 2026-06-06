@@ -1,10 +1,17 @@
 import { Github, ExternalLink, FolderOpen } from "lucide-react";
 import canvasofnikhil from "@/assets/canvasofnikhil.png";
 import stayinsights from "@/assets/bookings_dashboard.png";
-import datalake from "@/assets/datalake.png";
 import article from "@/assets/article.png";
+import olist from "@/assets/olist.png";
 
 const projects = [
+  {
+    title: "Olist E-Commerce Analytics Platform",
+    description: "Designed an end-to-end cloud analytics solution using Snowflake, dbt, and Power BI to transform Olist e-commerce data into scalable data models and interactive dashboards for sales, customer, product, and delivery performance insights.",
+    tags: ["Snowflake", "dbt", "PowerBI", "SQL", "AWS(S3)"],
+    github: "https://github.com/Nikhil-1503/snowflake-ecommerce-analytics",
+    image: olist,
+  },
   {
     title: "Canvas Of Nikhil: Art Portfolio Website",
     description: "A personal art portfolio website showcasing my charcoal, graphite and color pencil artworks, designed to reflect creativity, precision and visual storytelling.",
@@ -27,13 +34,7 @@ const projects = [
     link: "https://datawithnikhil.netlify.app/",
     github: "https://github.com/Nikhil-1503/data-with-nikhil",
     image: article,
-  },
-  {
-    title: "Data Lake Architecture",
-    description: "Scalable data lake design with bronze-silver-gold medallion architecture.",
-    tags: ["ADLS", "Delta Lake", "Spark"],
-    image: datalake,
-  },
+  }
 ];
 
 const Projects = () => {
