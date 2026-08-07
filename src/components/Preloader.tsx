@@ -1,72 +1,114 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const logLines = [
-  { text: "> Initializing Session...", delay: 0 },
-  { text: "> Loading config...", delay: 400 },
-  { text: "> Connecting to source...", delay: 800 },
-  { text: "> Extracting data from source...", delay: 1200 },
-  { text: "> Running transformations...", delay: 1600 },
-  { text: "> Validating schema integrity...", delay: 2000 },
-  // { text: "> Writing to Delta Lake...", delay: 2400 },
-  // { text: "> DAG execution complete ✓", delay: 2800 },
-  { text: "> Portfolio ready.", delay: 2400 },
+  "> Initializing session...",
+  "> Loading config...",
+  "> Connecting to source...",
+  "> Extracting data from source...",
+  "> Running transformations...",
+  "> Portfolio ready.",
 ];
 
+const TYPE_SPEED = 25;
+const PERIOD_PAUSE = 80;
+const LINE_PAUSE = 200;
+const SESSION_KEY = "preloader-shown";
+
 const Preloader = ({ onComplete }: { onComplete: () => void }) => {
-  const [visibleLines, setVisibleLines] = useState<number>(0);
-  const [typedChars, setTypedChars] = useState<number>(0);
+  const [visibleLines, setVisibleLines] = useState(0);
+  const [typedChars, setTypedChars] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
+  const completedRef = useRef(false);
+  const prefersReducedMotion = useRef(
+    typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
-  const currentLineText = visibleLines < logLines.length ? logLines[visibleLines].text : "";
+  const currentLineText = visibleLines < logLines.length ? logLines[visibleLines] : "";
 
-  // Type characters one by one for the current line
+  const finish = useCallback(() => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+    sessionStorage.setItem(SESSION_KEY, "1");
+    setFadeOut(true);
+    setTimeout(onComplete, 400);
+  }, [onComplete]);
+
+  // Skip entirely on repeat visits or reduced-motion preference
   useEffect(() => {
+    if (prefersReducedMotion.current || sessionStorage.getItem(SESSION_KEY)) {
+      finish();
+    }
+  }, [finish]);
+
+  // Let users skip with a click or key press
+  useEffect(() => {
+    const skip = () => finish();
+    window.addEventListener("click", skip);
+    window.addEventListener("keydown", skip);
+    return () => {
+      window.removeEventListener("click", skip);
+      window.removeEventListener("keydown", skip);
+    };
+  }, [finish]);
+
+  // Typing effect
+  useEffect(() => {
+    if (completedRef.current) return;
+
     if (visibleLines >= logLines.length) {
-      const timer = setTimeout(() => setFadeOut(true), 400);
-      const endTimer = setTimeout(onComplete, 900);
-      return () => { clearTimeout(timer); clearTimeout(endTimer); };
+      const t = setTimeout(finish, 500);
+      return () => clearTimeout(t);
     }
 
     if (typedChars < currentLineText.length) {
-      const speed = currentLineText[typedChars] === "." ? 80 : 25;
-      const timer = setTimeout(() => setTypedChars((c) => c + 1), speed);
-      return () => clearTimeout(timer);
-    } else {
-      // Line done, move to next
-      const timer = setTimeout(() => {
-        setVisibleLines((v) => v + 1);
-        setTypedChars(0);
-      }, 200);
-      return () => clearTimeout(timer);
+      const speed = currentLineText[typedChars] === "." ? PERIOD_PAUSE : TYPE_SPEED;
+      const t = setTimeout(() => setTypedChars((c) => c + 1), speed);
+      return () => clearTimeout(t);
     }
-  }, [visibleLines, typedChars, currentLineText, onComplete]);
+
+    const t = setTimeout(() => {
+      setVisibleLines((v) => v + 1);
+      setTypedChars(0);
+    }, LINE_PAUSE);
+    return () => clearTimeout(t);
+  }, [visibleLines, typedChars, currentLineText, finish]);
+
+  const totalChars = logLines.reduce((sum, l) => sum + l.length, 0);
+  const typedSoFar =
+    logLines.slice(0, visibleLines).reduce((sum, l) => sum + l.length, 0) + typedChars;
+  const progress = Math.min(100, (typedSoFar / totalChars) * 100);
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-background flex items-center justify-center transition-opacity duration-500 ${
+      role="status"
+      aria-live="polite"
+      aria-hidden={fadeOut}
+      className={`fixed inset-0 z-[9999] bg-background flex items-center justify-center transition-opacity duration-500 cursor-pointer ${
         fadeOut ? "opacity-0" : "opacity-100"
       }`}
     >
       <div className="w-full max-w-xl mx-4">
-        {/* Terminal window */}
-        <div className="rounded-lg border border-border overflow-hidden shadow-2xl" style={{ boxShadow: "0 0 40px hsl(142 72% 48% / 0.1)" }}>
-          {/* Title bar */}
+        <div
+          className="rounded-lg border border-border overflow-hidden shadow-2xl"
+          style={{ boxShadow: "0 0 40px hsl(var(--primary) / 0.1)" }}
+        >
           <div className="flex items-center gap-2 px-4 py-2.5 bg-secondary border-b border-border">
             <span className="w-3 h-3 rounded-full bg-destructive/80" />
             <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
             <span className="w-3 h-3 rounded-full bg-primary/80" />
-            <span className="ml-3 text-xs font-mono text-muted-foreground">nikhilshanbhag@pipeline ~ run portfolio.py</span>
+            <span className="ml-3 text-xs font-mono text-muted-foreground">
+              nikhilshanbhag@pipeline ~ run portfolio.py
+            </span>
           </div>
 
-          {/* Terminal body */}
           <div className="bg-card p-5 font-mono text-sm min-h-[280px]">
             {logLines.slice(0, visibleLines).map((line, i) => (
               <div key={i} className="mb-1.5 text-primary/90">
-                {line.text}
+                {line}
               </div>
             ))}
 
-            {/* Currently typing line */}
             {visibleLines < logLines.length && (
               <div className="mb-1.5 text-primary">
                 {currentLineText.slice(0, typedChars)}
@@ -74,7 +116,6 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
               </div>
             )}
 
-            {/* Blinking cursor after done */}
             {visibleLines >= logLines.length && !fadeOut && (
               <div className="text-primary">
                 <span className="inline-block w-2 h-4 bg-primary animate-pulse" />
@@ -83,13 +124,16 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
           </div>
         </div>
 
-        {/* Progress bar */}
         <div className="mt-4 h-1 bg-secondary rounded-full overflow-hidden">
           <div
-            className="h-full bg-primary rounded-full transition-all duration-200 ease-out"
-            style={{ width: `${(visibleLines / logLines.length) * 100}%` }}
+            className="h-full bg-primary rounded-full transition-all duration-150 ease-out"
+            style={{ width: `${progress}%` }}
           />
         </div>
+
+        <p className="mt-2 text-center text-[11px] text-muted-foreground font-mono">
+          click or press any key to skip
+        </p>
       </div>
     </div>
   );

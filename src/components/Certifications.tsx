@@ -8,9 +8,10 @@ const certifications = [
     link: "https://credentials.databricks.com/2f16f8f1-441b-42e9-a10a-44545ae2057e#acc.cxe7z201",
   },
   {
-    name: "Databricks Certified Generative AI Engineer Engineer",
+    name: "Databricks Certified Data Engineer Professional",
     org: "Databricks",
-    status: "Planned" as const,
+    status: "Completed" as const,
+    link: "https://credentials.databricks.com/1459e38b-5419-4964-a6d0-7865742806f3#acc.TYVmZMf5",
   },
   {
     name: "Microsoft Certified: Azure AI Engineer (AZ-102)",
