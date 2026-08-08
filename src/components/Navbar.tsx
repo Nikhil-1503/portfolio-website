@@ -45,7 +45,8 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="../../public/resume/Nikhil_Shanbhag_Data_Engineer_Resume.pdf"
+            href="/resume/Nikhil_Shanbhag_Data_Engineer_Resume.pdf"
+            download
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm border border-primary text-primary px-4 py-1.5 rounded hover:bg-primary hover:text-primary-foreground transition-all duration-200"
@@ -74,7 +75,8 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="../../public/resume/Nikhil_Shanbhag_Data_Engineer_Resume.pdf"
+            href="/resume/Nikhil_Shanbhag_Data_Engineer_Resume.pdf"
+            download
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-2 text-sm border border-primary text-primary px-4 py-1.5 rounded"
